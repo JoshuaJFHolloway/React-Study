@@ -1,0 +1,67 @@
+<!--html:5 (then press tab to create the format below!)-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <!-- React dom is required for when code base is used for react native, so that this script will be used
+    accordingly if the code is executed on other platforms such as mobiles -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY --> <!-- It is used for using etma script (used at top of page when pressing tab)
+    and to deal with JSX which is used with React. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <!-- Scripts such as the react library are needed so we can actually have our browser interpret our code otherwise typing
+    in React is pointless! -->
+    <title>Practising React</title> <!-- this goes on the TAB for the page (not actually on the page) as it is in the head, it is meta data.-->
+</head>
+<body>
+
+<!-- Designated area to insert React Content -->
+<!-- In general this React content will be in its own file and then linked to the index -->
+<div id="app">React has not rendered yet</div> <!-- if this text is seen then it means that somewhere we screwed up rendering react -->
+<div id="paragraph"> Paragraph should go here</div>
+<div id="google"> Google link should be here</div>
+<div id="unordered list"> Unordered list should be here</div>
+
+<!-- Javascript area -->
+<script type="text/babel">
+
+    // Render react to the DOM - will accept two arguments (React what, React where)
+    ReactDOM.render(
+        // first argument is JSX, (react what) JSX is used to describe what the UI looks like
+            <h1> Hello World </h1>,
+            //<href www.google.co.uk> visit google! </href>,
+        // second argument is React content rendered to the DOM
+        document.getElementById("app"), // targets the div with the Id of "app" which is above this
+        // this is the location you want to insert it into the DOM. In this case its into the div above
+    );
+
+    ReactDOM.render(
+        <p> I am a paragraph! </p>,
+        document.getElementById("paragraph")
+    );
+
+    ReactDOM.render(
+        <a href="www.google.co.uk"> Visit google! </a>,
+        document.getElementById("google")
+
+    );
+
+    ReactDOM.render(
+        <ul>
+            <li> Do the laundry </li>
+            <li> Empty Bins </li>
+            <li> Learn react </li>
+        </ul>,
+        document.getElementById("unordered list")
+    )
+</script>
+
+</body>
+</html>
