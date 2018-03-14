@@ -25,43 +25,63 @@
 <!-- Designated area to insert React Content -->
 <!-- In general this React content will be in its own file and then linked to the index -->
 <div id="app">React has not rendered yet</div> <!-- if this text is seen then it means that somewhere we screwed up rendering react -->
-<div id="paragraph"> Paragraph should go here</div>
-<div id="google"> Google link should be here</div>
-<div id="unordered list"> Unordered list should be here</div>
 
 <!-- Javascript area -->
 <script type="text/babel">
 
-    // Render react to the DOM - will accept two arguments (React what, React where)
-    ReactDOM.render(
-        // first argument is JSX, (react what) JSX is used to describe what the UI looks like
-            <h1> Hello World </h1>,
-            //<href www.google.co.uk> visit google! </href>,
-        // second argument is React content rendered to the DOM
-        document.getElementById("app"), // targets the div with the Id of "app" which is above this
-        // this is the location you want to insert it into the DOM. In this case its into the div above
-    );
+//    // Render react to the DOM - will accept two arguments (React what, React where)
+//    ReactDOM.render(
+//        // first argument is JSX, (react what) JSX is used to describe what the UI looks like
+//            <h1> Hello World </h1>,
+//            //<href www.google.co.uk> visit google! </href>,
+//        // second argument is React content rendered to the DOM
+//        document.getElementById("app"), // targets the div with the Id of "app" which is above this
+//        // this is the location you want to insert it into the DOM. In this case its into the div above
+//    );
+//
+//    ReactDOM.render(
+//        <p> I am a paragraph! </p>,
+//        document.getElementById("paragraph")
+//    );
+//
+//    ReactDOM.render(
+//        <a href="https://www.google.co.uk"> Visit google! </a>,
+//        document.getElementById("google")
+//
+//    );
+//
+//    ReactDOM.render(
+//        <ul>
+//            <li> Do the laundry </li>
+//            <li> Empty Bins </li>
+//            <li> Learn react </li>
+//        </ul>,
+//        // li*3 then press tab === three <li> </li> tags!
+//        document.getElementById("unordered list")
+//    )
 
-    ReactDOM.render(
-        <p> I am a paragraph! </p>,
-        document.getElementById("paragraph")
-    );
+    /// these multiple ReactDom.render(..) lines are because you cannot render multiple JSX
+    /// in the same line. So <h1> Hello World </h1><p> I am a paragraph </p> Will break it.
+    /// However this can be refracted and work as seen below html.
 
-    ReactDOM.render(
-        <a href="https://www.google.co.uk"> Visit google! </a>,
-        document.getElementById("google")
+ReactDOM.render(
 
-    );
-
-    ReactDOM.render(
+    <div>
+      <h1> Hello World </h1>
+      <p> I am a paragraph </p>
+        <a href= "http://google.co.uk" > visit google! </a>
         <ul>
-            <li> Do the laundry </li>
-            <li> Empty Bins </li>
-            <li> Learn react </li>
-        </ul>,
-        // li*3 then press tab === three <li> </li> tags!
-        document.getElementById("unordered list")
-    )
+          <li> Do the laundry </li>
+          <li> Empty Bins </li>
+          <li> Learn react </li>
+        </ul>
+    </div>,
+
+    document.getElementById("app")    
+
+    );
+
 </script>
+
 </body>
 </html>
