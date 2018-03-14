@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title> Class components </title>
+</head>
+<body>
+
+<div id="app"> React has not rendered successfully </div>
+
+<script type="text/babel">
+
+
+    // creating a class component
+    // you NEED the render method in the class component otherwise it wont work
+
+class Shapes extends React.Component {
+    render() {
+        return (
+            // JSX goes here
+            <h1> Circle, square, rectangle </h1>
+
+        )
+    }
+}
+
+
+ReactDOM.render(
+
+    <Shapes/>,
+
+    document.getElementById("app"),
+
+);
+
+</script>
+</body>
+</html>
