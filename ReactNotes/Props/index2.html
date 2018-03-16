@@ -20,8 +20,32 @@
 
 <!-- JAVASCRIPT -->
 <script type="text/babel">
+
+    // classes use the ... extends React.Component { render () { return ()}} layout
+
+    class PersonGreeting extends React.Component {
+        render() {
+            let personStyle = {
+                height : 300,
+                width : 300,
+                backgroundColor: this.props.color
+            };
+
+            return (
+                <div style={personStyle}> Hello, {this.props.name}</div>
+            )
+        }
+    }
+
+
     ReactDOM.render(
-            <h1>Hello World</h1>,
+            <PersonGreeting color="tomato" name ="Jimmy"/>,
+
+        // This sets the props for PersonGreeting
+        // backgroundColor receives the string "tomato" as color = "tomato"
+        // name receives "Jimmy"
+        // you can change the name and color easily by adding or editing the props that are set here
+
         document.getElementById("app")
     );
 </script>
