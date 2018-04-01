@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Boiler Plate Code</title>
+</head>
+<body>
+
+<!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
+<div id="app">React has not rendered yet</div>
+
+<!-- JAVASCRIPT -->
+<script type="text/babel">
+
+    class DinnerVote extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                votes: 0
+            }
+        }
+        render () {
+
+            let dinnerVoteStyle = {
+                display: 'inline-block',
+                textAlign: 'center',
+                margin: 20,
+                height: 500,
+                width: 300,
+                padding: 0,
+                background: "#FFF",
+            };
+
+            let foodStyle = {
+                height: 200,
+                width: 200,
+                marginTop: 20
+            };
+
+
+            return (
+                <div style={dinnerVoteStyle}>
+                    <img src={this.props.img} alt="food image" style={foodStyle}/>
+                    <!-- "food image" will be rendered if the image doesnt render (image link is broken) or someone is using a screen reader to engage with our app.-->
+                    <h1>Dinner Choice</h1>
+                    <p>Vote here if you want this</p>
+                    <button>+1</button>
+                    <p>Vote here if you do not want this</p>
+                    <button>-1</button>
+                    <p>Total: {this.state.votes}</p>
+                </div>
+
+            );
+        }
+    }
+
+    ReactDOM.render(
+
+        <div>
+        <DinnerVote img="https://ichef-1.bbci.co.uk/news/660/cpsprodpb/1325A/production/_88762487_junk_food.jpg"/>;
+        <DinnerVote img="https://www.bbcgoodfood.com/sites/default/files/styles/carousel_small/public/recipe/recipe-image/2017/11/orange-marmalade-glazed-roast-duck.jpg?itok=yxM4LNJi"/>;
+        <DinnerVote img="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg"/>;
+        </div>,
+
+
+        document.getElementById("app")
+    );
+</script>
+
+</body>
+</html>
